@@ -1,0 +1,29 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
+    
+    <servlet>
+        <servlet-name>TemperatureServlet</servlet-name>
+        <servlet-class>servlet.TemperatureServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TemperatureServlet</servlet-name>
+        <url-pattern>/convert</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>TempFilter</filter-name>
+        <filter-class>filter.TempFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>TempFilter</filter-name>
+        <url-pattern>/convert</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>listener.RequestListener</listener-class>
+    </listener>
+
+    <welcome-file-list>
+        <welcome-file>temp.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
